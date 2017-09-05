@@ -20,5 +20,7 @@ from core import views
 
 urlpatterns = [
     url(r'^$', views.index, name='home'),
+    url(r'^user/', views.user, name='user'),
+    url(r'^metrics/', views.metrics, name='metrics'),
     url(r'^admin/', admin.site.urls),
 ]

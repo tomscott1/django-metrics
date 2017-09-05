@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+
 from pathlib import Path
 
 # Handle missing secret key exceptions
@@ -31,13 +32,11 @@ TEMPLATE_DIR = BASE_DIR / 'templates'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+# static directory set up is slightly different due to django bug
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ( os.path.join('static'), )
-
-# STATIC_ROOT = BASE_DIR / 'static_root'
-# STATICFILES_DIRS = [BASE_DIR / 'static']
-
+STATICFILES_DIRS = (os.path.join('static'), )
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/

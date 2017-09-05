@@ -7,4 +7,14 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'base.html')
+    return render(request, 'index.html')
+
+
+def user(request):
+    # define a variable in the views
+    user_name = 'Bill'
+    return render(request, 'user.html', { 'user_name': user_name })
+
+
+def metrics(request):
+    return render(request, 'metrics.html')
