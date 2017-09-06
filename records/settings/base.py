@@ -36,7 +36,10 @@ TEMPLATE_DIR = BASE_DIR / 'templates'
 # static directory set up is slightly different due to django bug
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join('static'), )
+STATICFILES_DIRS = [
+    os.path.join('static'),
+    os.path.join('react/static'),
+]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -58,7 +61,9 @@ DEFAULT_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'webpack_loader'
+]
 
 LOCAL_APPS = [
     'core',
@@ -96,6 +101,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'records.wsgi.application'
 
+# Weboack Loader config for building react on the front end
+
+NON_POSIX_BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/local/',  # end with slash
+        'STATS_FILE': os.path.join(NON_POSIX_BASE_DIR, 'webpack-stats-local.json'),
+        # 'STATS_FILE': BASE_DIR / 'webpack-stats-local.json',
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
