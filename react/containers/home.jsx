@@ -5,7 +5,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        React Home Component
+        React Home Component - Change 2 hot load central town villeno
       </div>
     )
   }

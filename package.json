@@ -16,6 +16,7 @@
     "url": "https://github.com/tomscott1/django-metrics/issues"
   },
   "dependencies": {
+    "cors": "^2.8.4",
     "lodash": "^4.5.1",
     "react": "^0.14.7",
     "react-cookie": "^0.4.5",
