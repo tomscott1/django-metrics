@@ -21,17 +21,12 @@ Installing Requirements:
 
 `python manage.py migrate`
 
----
-
----
 Running on dev:
 
-- In it's own terminal
+In one terminal
 
 `node server.js`
 
-- In another terminal
+In another terminal
 
 `./start.sh`
-
-___
