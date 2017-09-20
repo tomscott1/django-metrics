@@ -16,11 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from core import views
+from core import views as core_views
 
 urlpatterns = [
-    url(r'^$', views.index, name='home'),
-    url(r'^user/', views.user, name='user'),
-    url(r'^metrics/', views.metrics, name='metrics'),
+    url(r'^login', core_views.login),
+    url(r'^$', core_views.index, name='home'),
+    url(r'^user/', core_views.user, name='user'),
+    url(r'^metrics/', core_views.metrics, name='metrics'),
     url(r'^admin/', admin.site.urls),
 ]
